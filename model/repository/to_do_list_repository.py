@@ -19,7 +19,7 @@ class ToDoListRepository:
         self.connection.close()
 
     def save_task(self, new_task):
-        self.connection()
+        self.connect()
         self.cursor.execute(
             """ INSERT INTO TASKS
                     (title, start_time, description, priority)
@@ -31,7 +31,7 @@ class ToDoListRepository:
     def edit_task(self, new_task):
         self.connect()
         self.cursor.execute("update TASKS set title=?, start_time=?, description=?, priority=? where id_=?",
-                            [new_task.title, new_task.start_time, new_task.description, new_task.priority, new_task.id])
+                        [new_task.title, new_task.start_time, new_task.description, new_task.priority, new_task.id_])
         self.disconnect(commit = True)
 
     def delete_task(self, id_):
