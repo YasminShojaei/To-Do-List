@@ -2,11 +2,11 @@ from model.tools.validation import *
 
 class ToDoList:
     def __init__(self, id_, title, start_time, description, priority):
-        self._id_ = id_
-        self._title = title
-        self._start_time = start_time
-        self._description = description
-        self._priority = priority
+        self.id_ = id_
+        self.title = title
+        self.start_time = start_time
+        self.description = description
+        self.priority = priority
 
     def __repr__(self):
         return f"{self.__dict__}"
